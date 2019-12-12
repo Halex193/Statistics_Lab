@@ -1,8 +1,12 @@
-function [vectfr] = Fr_Rel(x)
-    ux=unique(x);
-    lx = length(ux);
-    for j=1:lx
-        fr(j)=sum(x==ux(j));
-    end
-    vectfr = fr/length(x);
+function [vu,VectRelFr]=Fr_rel(v)
+
+vu=unique(v);
+lu=length(vu);
+
+
+fr=zeros(1,lu);
+for j=1:lu
+  fr(j)=sum(v==vu(j));
 end
+
+VectRelFr=fr/length(v);
